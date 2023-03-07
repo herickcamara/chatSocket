@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    body{
+        height: 100vh;
+    }
+    /* Componet page LOgin*/
+    .login{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: blueviolet;
+    }
+    .areaModal{
+        max-width: 300px;
+        width: 100%;
+        background-color: rgba(0, 0,0, .5);
+        height: 300PX;
+        display: flex;
+        justify-content:  space-around;
+        align-items: center;
+        flex-direction: column;
+        border-radius: .8REM;
+    }
+    .areaModal input{
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        padding: 10px;
+        border-radius: 0.5rem;
+        
+    }
+    .areaModal button{
+        width: 80%;
+        font-size: 1rem;
+        outline: none;
+        padding: 10px;
+        border-radius: 0.5rem;
+    }
+
+    /* Componet page chat*/
+    .chat{
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: blueviolet;
+
+    }
+.areaChat{
+    max-width: 980px;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+.areaMsg{
+    flex: 1;
+    display: flex;
+    border: 2px solid #000;
+    border-radius: .8rem;
+}
+.areaInput{
+    height: 100px;
+    display: flex;
+padding: 10px 0px;
+}
+
+.areaInput input{
+    height: 50px;
+    flex: 1;
+    font-size: 1rem;
+    padding: 10px;
+        outline: none;
+        border-radius: 0.5rem;
+}
+.areaInput button{
+    height: 50px;
+    width: 100px;
+    border-radius: 0.5rem;
+   margin-left: 5px;
+
+}
+.onlines{
+    max-width: 255px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.msn{
+    flex: 1;
+    height: 100%;
+    padding: 10px;
+   
+}
+.msn > div{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    border: 1px solid #000;
+    border-radius: .8rem;
+    padding: 10px;
+}
+li{
+    min-height: 50px;
+    position: relative;
+    border-bottom: 1px solid #a9f;
+}
+
+.list{
+    padding-top: 10px;
+    border-radius: .8rem;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+overflow: scroll;
+    border: 1px solid #000;
+
+}
+.message{
+    width: 100%;
+    min-height: 50px;
+    background-color: #a9f;
+    padding: 10px;
+    margin: 10px 0px;
+}
+.listMsn{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: scroll;
+}
+.nameAucthor{
+    font-size:larger;
+}
+
+
+.flux{
+    display: flex;
+    align-items: center;
+    border: 4px solid rgb(44, 9, 77);
+    min-height: 50px;
+    max-width: 320px;
+    width: 100%;
+    background-color: blueviolet;
+    margin: auto;
+}
+
+.box{
+    flex: 1;
+    display: flex;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    
+}
+.status{
+    width: 15px;
+    height: 15px;
+    border: none;
+    margin: 0px 10px;
+    border-radius: .8rem;
+    background-color: yellow;
+}
+ </style>
+</head>
+<body>
+    <header style="display: flex; min-height: 60px;align-items: center;justify-content: center;">
+        <h1>chat</h1>
+        <div class="flux">
+         <div class="box">
+             <div class="status"> .</div>
+            <h3>Seja Bem Vindo !</h3>
+            </div>
+        </div>
+    </header>
+    <div class="login" id="loginPage">
+        <div class="areaModal">
+            <H2>Login</H2>
+            <input type="text"  placeholder="digite seu nome">
+            <button>Entra no chat</button>
+        </div>
+    </div>
+    <div class="chat" id="chatPage">
+        <div class="areaChat">
+            
+                <div class="areaMsg">
+                    
+                    <div class="onlines">
+                        <h3>Pessoas onlines <span>(00)</span></h3>
+                        <ul class="list">
+            
+                        </ul>
+                    </div>
+                    <div class="msn">
+       <div>
+           <ul class="listMsn">
+            <div class="message">
+                <div class="nameAucthor"><strong>joãozinho:</strong></div>
+                <div class="pheses">blalfslbvlsalvlavlalc</div>
+
+            </div>       
+           </ul>
+          
+       </div>
+     </div>
+    </div>
+
+    <div class="areaInput">
+    <input type="text" placeholder="Responder">
+    <button>Envia →</button>
+    </div>
+    </div>
+    </div>
+    <script src="/socket.io/socket.io.js" ></script>
+    <script src="main.js" ></script>
+</body>
+</html>
